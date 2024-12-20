@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Series - Go Streaming</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <style>
+        /* Center alignment and decoration for the Popular Series section */
+        .series {
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        .series h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: red;
+            text-decoration: underline;
+            margin-bottom: 30px;
+        }
+
+        .series-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .series-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .series-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .series-item h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color:black;
+            text-align: center;
+        }
+
+        .episodes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .watch-now {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff5733;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .watch-now:hover {
+            background-color: #c43e1d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo"><i class='bx bxs-movie'></i>Streamingnest</a>
+        
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="series.html" class="active">Series</a></li>
+            <li><a href="coming-soon.html">Coming Soon</a></li>
+        </ul>
+        <form class="search-bar" action="#" method="get">
+            <input type="text" placeholder="Search..." name="query" required>
+            <button type="submit"><i class='bx bx-search'></i></button>
+        </form>
+    </header>
+
+    <!-- Series Section -->
+    <section class="series" id="series">
+        <h1>Popular Series</h1>
+        <div class="series-list">
+            <div class="series-item">
+                <img src="assets/posters/ShekharHome.jpg" alt="ShekharHome">
+                <h2>Shekhar Home</h2>
+                <div class="episodes">
+                    <a href="https://drive.google.com/file/d/1X_jv0s-djJeaHlJa6M1wTkfpSjox_uJN/preview" class="watch-now">Episode 1 - Watch Now</a>
+                    <a href="https://drive.google.com/file/d/1w10sEZyVCYLqRmgY647x-lawOTzUrUow/preview" class="watch-now">Episode 2 - Watch Now</a>
+                    <a href="https://drive.google.com/file/d/1kAKELs_MtRSKIhH9EN886l9u7JCqtTHL/preview" class="watch-now">Episode 3 - Watch Now</a>
+                    <a href="https://drive.google.com/file/d/1AG_iBOgPz9LkOSBj_h1QSSVlJpYBP6ET/preview" class="watch-now">Episode 4 - Watch Now</a>
+                    <a href="https://drive.google.com/file/d/1SGjKs7WdKnvNfU7qz2DPjdA505qCFpAx/preview" class="watch-now">Episode 5 - Watch Now</a>
+                    <a href="https://drive.google.com/file/d/1IC36nArtE-mWyiVPOH5V1z_2JhMGdCdI/preview" class="watch-now">Episode 6 - Watch Now</a>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

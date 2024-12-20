@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Movies</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo"><i class='bx bxs-movie'></i>Streamingnest</a>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="series.html">Series</a></li>
+            <li><a href="coming-soon.html">Coming Soon</a></li>
+        </ul>
+        <form class="search-bar" action="#" method="get">
+            <input type="text" placeholder="Search..." name="query" required>
+            <button type="submit"><i class='bx bx-search'></i></button>
+        </form>
+    </header>
+
+    <!-- Popular Movies Section -->
+    <section class="movies">
+        <h1>Popular Movies</h1>
+        <div class="carousel">
+            <!-- Movie 1 -->
+            <div class="movie-item">
+                <img src="assets/posters/pushpa2.png" alt="pushpa-2">
+                <button class="btn-watch-now" onclick="openVideoModal('https://drive.google.com/file/d/1BZCMSTcBF64yJT0XpP-Rdx-u-N5LzYnD/preview')">Watch Now</button>
+            </div>
+            <!-- Movie 2 -->
+            <div class="movie-item">
+                <img src="assets/posters/bhaskar.png" alt="Lucky Bhaskar">
+                <button class="btn-watch-now" onclick="openVideoModal('https://drive.google.com/file/d/1uFgt0E_q2I6pg3o3VBLHxBtcNbIli341/preview')">Watch Now</button>
+            </div>
+            <!-- Movie 3 -->
+            <div class="movie-item">
+                <img src="assets/posters/K.G.F-chapter1.png" alt="K.G.F Chapter 1">
+                <button class="btn-watch-now" onclick="openVideoModal('https://drive.google.com/file/d/1g3KaUH1YP_SfUV47Mdb6VEKI59nRbdyQ/preview')">Watch Now</button>
+            </div>
+            <!-- Movie 4 -->
+            <div class="movie-item">
+                <img src="assets/posters/K.G.F-chapter2.jpeg" alt="K.G.F Chapter 2">
+                <button class="btn-watch-now" onclick="openVideoModal('https://drive.google.com/file/d/1Rz-Ki7qoeV-jO8c4dWSLzHdb7HMOfvad/preview')">Watch Now</button>
+
+            </div>
+            <!-- Movie 5 -->
+            <div class="movie-item">
+                <img src="assets/posters/harry potter and the half blood prince.jpg" alt="Harry Potter and the Half Blood Prince">
+                <button class="btn-watch-now" onclick="openVideoModal('https://drive.google.com/file/d/1x4ogxTFRUTAKSBqa97r6hEIatcYpj4LU/preview')">Watch Now</button>
+            </div>
+            <!-- Movie 6 -->
+            <div class="movie-item">
+                <img src="assets/posters/Harry Potter and the Prisoner of Azkaban.jpg" alt="Harry Potter and the Prisoner of Azkaban">
+                <button class="btn-watch-now" onclick="openVideoModal('https://drive.google.com/file/d/1YRoZYR4bvenzi79y57jNqGhxqDt-83b_/preview')">Watch Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="video-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="position: relative; max-width: 800px; width: 100%; background: #000; padding: 20px; border-radius: 10px;">
+            <span onclick="closeVideoModal()" style="position: absolute; top: 10px; right: 20px; color: #fff; font-size: 24px; cursor: pointer;">&times;</span>
+            <iframe 
+                id="video-iframe" 
+                width="100%" 
+                height="450" 
+                style="max-width: 80%; max-height: 80%;" 
+            frameborder="0" 
+            allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // Open the video modal
+        function openVideoModal(videoUrl) {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-iframe');
+            iframe.src = videoUrl;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close the video modal
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-iframe');
+            modal.style.display = 'none';
+            iframe.src = ""; // Reset video
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

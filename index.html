@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamingnest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo"><i class='bx bxs-movie'></i>Streamingnest</a>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="series.html">Series</a></li>
+            <li><a href="coming-soon.html">Coming Soon</a></li>
+        </ul>
+        <form class="search-bar" action="#" method="get">
+            <input type="text" placeholder="Search..." name="query" required>
+            <button type="submit"><i class='bx bx-search'></i></button>
+        </form>
+    </header>
+
+    <!-- Hero Section with Background Video -->
+    <section class="hero">
+        <video autoplay muted loop id="background-video">
+            <source src="assets/trailers/trending-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h1>Pushpa-2[HQ]</h1>
+            <p> The clash is on as Pushpa and Bhanwar Singh continue their rivalry in this epic conclusion to the two-parted action drama.</p>
+            <button class="btn-watch-now" onclick="openVideoModal('https://drive.google.com/file/d/1BZCMSTcBF64yJT0XpP-Rdx-u-N5LzYnD/preview')">Watch Now</button>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="video-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="position: relative; max-width: 800px; width: 100%; background: #000; padding: 20px; border-radius: 10px;">
+            <span onclick="closeVideoModal()" style="position: absolute; top: 10px; right: 20px; color: #fff; font-size: 24px; cursor: pointer;">&times;</span>
+            <iframe 
+                id="video-iframe" 
+                width="100%" 
+                height="450" 
+                allow="autoplay"
+                style="border: none; border-radius: 10px;">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // Open the video modal
+        function openVideoModal(videoUrl) {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-iframe');
+            iframe.src = videoUrl;
+            modal.style.display = 'flex';
+        }
+
+        // Close the video modal
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-iframe');
+            modal.style.display = 'none';
+            iframe.src = ""; // Reset video
+        }
+    </script>
+</body>
+</html>
